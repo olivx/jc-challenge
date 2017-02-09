@@ -1,0 +1,25 @@
+{% load bootstrap %}
+
+<form class="js-company-create-form" action="{% url 'crm:company_delete' form.instance.pk_uuid %}" method="POST">
+  <div class="modal-header">
+    <button class="close" aria-label="Close" data-dismiss="modal" type="button">
+      <span aria-hidden="True">&times;</span>
+    </button>
+    <h4 class="modal-title">Delete </h4>
+  </div> <!-- header -->
+
+  <div class="modal-body">
+    {% csrf_token %}
+
+    <p class="lead"> Tem certeza que deseja deletar a Entidade
+      <strong>{{ company_name }} </strong> ?
+    </p>
+
+
+  </div><!-- body -->
+
+  <div class="modal-footer " style="margin-top:10px;">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+    <button type="submit" class="btn btn-danger" >Deletar</button>
+  </div><!-- footer -->
+</form>

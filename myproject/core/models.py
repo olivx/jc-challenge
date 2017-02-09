@@ -10,7 +10,7 @@ def _createHash():
 
 
 class UUIDModel(models.Model):
-    id = models.UUIDField(primary_key=True, unique=True,
+    pk_uuid = models.UUIDField(primary_key=True, unique=True,
                           editable=False, default=_createHash)
 
     class Meta:

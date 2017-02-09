@@ -25,7 +25,7 @@
 <h2>Lista de Empresas</h2>
 
 {% if object_list %}
-<table class="table table-striped" id="company-table">
+<table id="company-table" class="table table-striped">
     <thead>
     <tr>
         <th>Empresa</th>
@@ -34,12 +34,9 @@
     </tr>
     </thead>
     <tbody>
-    {% for company in object_list %}
-    <td><a href="{ company.get_absolute_url }}">{{ company.name }}</a></td>
-    <td>{{ company.user }}</td>
-    <td>{{ company.created|date:"d/m/Y" }}</td>
-    </tr>
-    {% endfor %}
+
+        {% include 'crm/company_table.html' %}
+
     </tbody>
 </table>
 {% else %}

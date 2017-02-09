@@ -1,22 +1,22 @@
 {% load bootstrap %}
 
-<form class="js-company-create-form" action="{% url 'crm:company_add' %}" method="POST">
+<form class="js-company-create-form" action="{% url 'crm:company_update' form.instance.pk_uuid %}" method="POST">
   <div class="modal-header">
     <button class="close" aria-label="Close" data-dismiss="modal" type="button">
       <span aria-hidden="True">&times;</span>
     </button>
-    <h4 class="modal-title">Nova Empresa</h4>
+    <h4 class="modal-title">Update</h4>
   </div> <!-- header -->
 
   <div class="modal-body">
     {% csrf_token %}
 
-    {{ form|bootstrap_horizontal }}
+    {{ form|bootstrap }}
 
   </div><!-- body -->
 
-  <div class="modal-footer">
+  <div class="modal-footer " style="margin-top:10px;">
     <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-    <button type="submit" class="btn btn-primary" >Salvar</button>
+    <button type="submit" class="btn btn-warning" >Alterar</button>
   </div><!-- footer -->
 </form>
